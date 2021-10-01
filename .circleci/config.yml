@@ -22,7 +22,7 @@ jobs:
           command: "echo Hello, World!"
       - node/install:
           install-yarn: true
-      - run: node --version
+      - run: npx semantic-release
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
