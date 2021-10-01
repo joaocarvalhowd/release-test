@@ -3,7 +3,7 @@
 version: 2.1
 
 orbs:
-  semantic-versioning: payfit/semantic-versioning@0.96.0
+  node: circleci/node@4.7.0
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -20,9 +20,9 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - run:
-          command: npx semantic-release@v15.13
-          name: Run semantic-versioning
+      - node/install:
+          install-yarn: true
+      - run: node --version
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
